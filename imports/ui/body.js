@@ -38,7 +38,6 @@ Template.toBuy.helpers({
 
 Template.products.helpers({
 	products: function () {
-		console.log(Products.find({}));
 		return Products.find({});
 	}
 });
