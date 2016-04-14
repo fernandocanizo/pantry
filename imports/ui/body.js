@@ -3,6 +3,8 @@
 
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+import { Products } from '/imports/collections';
+import { Pantry } from '/imports/collections';
 
 import './body.html';
 import './navbar.html';
@@ -19,7 +21,6 @@ Template.products.helpers({
 	]
 });
 
-/*
 Meteor.subscribe('products');
 Meteor.subscribe('pantry');
 
@@ -41,4 +42,3 @@ Template.products.helpers({
 		return Products.find({});
 	}
 });
-*/
