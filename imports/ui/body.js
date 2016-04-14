@@ -3,7 +3,10 @@
 
 import { Template } from 'meteor/templating';
 import { Meteor } from 'meteor/meteor';
+
 import './body.html';
+import './navbar.html';
+import './footer.html';
 
 Template.products.helpers({
 	products: [
