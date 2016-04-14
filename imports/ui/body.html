@@ -29,7 +29,7 @@
 	<div id="pantry">
 		<ul>
 			{{#each products }}
-				<li>{{> productListItem }}</li>
+				{{> productListItem }}
 			{{/each }}
 		</ul>
 	</div>
@@ -39,7 +39,7 @@
 	<div id="toBuy">
 		<ul>
 			{{#each products }}
-				<li>{{> productListItem }}</li>
+				{{> productListItem }}
 			{{/each }}
 		</ul>
 	</div>
@@ -49,7 +49,7 @@
 	<div id="products">
 		<ul>
 			{{#each products }}
-				<li>{{ product.name }}</li>
+				{{> productListItem }}
 			{{/each }}
 		</ul>
 	</div>
