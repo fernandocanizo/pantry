@@ -1,5 +1,5 @@
 {
-  "name": "our-fridge",
+  "name": "our-pantry",
   "private": true,
   "scripts": {
     "start": "meteor run"
