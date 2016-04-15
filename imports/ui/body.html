@@ -29,7 +29,7 @@
 	<div id="pantry">
 		<ul>
 			{{#each products }}
-				{{> productListItem }}
+				{{> productPantryItem }}
 			{{/each }}
 		</ul>
 	</div>
@@ -39,7 +39,7 @@
 	<div id="toBuy">
 		<ul>
 			{{#each products }}
-				{{> productListItem }}
+				{{> productToBuyItem }}
 			{{/each }}
 		</ul>
 	</div>
@@ -64,6 +64,18 @@
 
 <template name="productListItem">
 	<li class="product">
-		<span class="label label-primary js-draggable" data-id="{{_id}}">{{ name }}</span>
+		<button type="button" class="btn btn-primary" data-id="{{_id}}">{{ name }}</button>
+	</li>
+</template>
+
+<template name="productToBuyItem">
+	<li class="product">
+		<button type="button" class="btn btn-danger" data-id="{{_id}}">{{ name }}</button>
+	</li>
+</template>
+
+<template name="productPantryItem">
+	<li class="product">
+		<button type="button" class="btn btn-success" data-id="{{_id}}">{{ name }}</button>
 	</li>
 </template>

@@ -25,13 +25,10 @@ Template.pantry.helpers({
 
 Template.pantry.onRendered(function () {
 	let templateInstance = this;
-	templateInstance.$('#pantry').droppable({
-		drop: (evt, ui) => {
-			let query = { _id: ui.draggable.data('id') };
-			let changes = { $set: { isHere: true }};
-			Products.update(query, changes);
-		}
-	});
+	templateInstance.$('#pantry button').on('click', function () {
+		// update Pantry
+		console.log('not implemented');
+		});
 });
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -65,8 +62,29 @@ Template.products.events({
 ////////////////////////////////////////////////////////////////////////////////
 // productListItem
 ////////////////////////////////////////////////////////////////////////////////
-Template.productListItem.onRendered(function () {
-	let templateInstance = this;
-	// make all products draggable
-	templateInstance.$(".js-draggable").draggable();
+Template.productListItem.events({
+	'click button': function (event) {
+		let productId = $(event.target).data('id');
+		Meteor.call('pantry.insert', productId);
+	}
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// productToBuyItem
+////////////////////////////////////////////////////////////////////////////////
+Template.productToBuyItem.events({
+	'click button': function (event) {
+		let productId = $(event.target).data('id');
+		Meteor.call('pantry.toggleIsHere', productId);
+	}
+});
+
+////////////////////////////////////////////////////////////////////////////////
+// productPantryItem
+////////////////////////////////////////////////////////////////////////////////
+Template.productPantryItem.events({
+	'click button': function (event) {
+		let productId = $(event.target).data('id');
+		Meteor.call('pantry.remove', productId);
+	}
 });
