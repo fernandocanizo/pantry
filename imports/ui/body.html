@@ -63,7 +63,7 @@
 </template>
 
 <template name="productListItem">
-	<li>
-		<span class="draggable">{{ name }}</span>
+	<li class="product">
+		<span class="label label-primary js-draggable" data-id="{{_id}}">{{ name }}</span>
 	</li>
 </template>

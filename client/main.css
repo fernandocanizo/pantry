@@ -29,3 +29,9 @@ body > .container {
 	padding-right: 15px;
 	padding-left: 15px;
 }
+
+li.product {
+	font-size: 2rem;
+	padding-bottom: .3rem;
+	list-style-type: none;
+}
