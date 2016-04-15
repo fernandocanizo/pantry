@@ -41,3 +41,13 @@ Template.products.helpers({
 		return Products.find({});
 	}
 });
+
+Template.products.events({
+	'submit #addProduct': function (event) {
+		event.preventDefault();
+		let product = event.target.inputProduct.value.trim();
+		Meteor.call('products.insert', product);
+		// reset input box
+		event.target.inputProduct.value = "";
+	}
+});

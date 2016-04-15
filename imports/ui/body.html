@@ -46,6 +46,13 @@
 </template>
 
 <template name="products">
+	<form id="addProduct">
+		<div class="form-group">
+			<label for="inputProduct">Add a new product</label>
+			<input type="text" class="form-control" name="inputProduct" id="inputProduct" placeholder="Bananas" autofocus>
+		</div>
+	</form>
+
 	<div id="products">
 		<ul>
 			{{#each products }}

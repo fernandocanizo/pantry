@@ -4,6 +4,7 @@
 import { Meteor } from 'meteor/meteor';
 import { Products } from '/imports/collections';
 import { Pantry } from '/imports/collections';
+import '/imports/api/products';
 
 
 Meteor.startup(() => {
@@ -20,7 +21,7 @@ Meteor.startup(() => {
 
 		products.forEach((product) => {
 			Products.insert({
-				name: product,
+				name: product[0].toUpperCase() + product.slice(1),
 				addedOn: Date.now(),
 				addedBy: 'admin',
 			});
