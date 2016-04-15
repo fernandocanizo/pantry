@@ -30,9 +30,18 @@ Meteor.methods({
 	},
 
 	'pantry.insert'(productId) {
-		let product = Products.findOne(productId);
-		product.isHere = false;
-		Pantry.insert(product);
+		let productInPantry = Pantry.findOne(productId);
+		if('undefined' === typeof productInPantry) {
+			// create it
+			let product = Products.findOne(productId);
+			product.isHere = false;
+			product.count = 1;
+			Pantry.insert(product);
+		} else {
+			// update count
+			productInPantry.count++;
+			Pantry.update(productId, productInPantry);
+		}
 	},
 
 	'pantry.toggleIsHere'(productId) {

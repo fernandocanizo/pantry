@@ -70,12 +70,12 @@
 
 <template name="productToBuyItem">
 	<li class="product">
-		<button type="button" class="btn btn-danger" data-id="{{_id}}">{{ name }}</button>
+		<button type="button" class="btn btn-danger" data-id="{{_id}}">{{ name }} <span class="badge">{{ count }}</span></button>
 	</li>
 </template>
 
 <template name="productPantryItem">
 	<li class="product">
-		<button type="button" class="btn btn-success" data-id="{{_id}}">{{ name }}</button>
+		<button type="button" class="btn btn-success" data-id="{{_id}}">{{ name }} <span class="badge">{{ count }}</span></button>
 	</li>
 </template>
